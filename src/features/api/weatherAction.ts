@@ -1,6 +1,21 @@
-import {createAsyncThunk} from "@reduxjs/toolkit";
 import {api_key, base_url} from "../../utils/constants.ts";
+import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
 
+
+export const weatherApi = createApi({
+    reducerPath: "weatherApi",
+    baseQuery: fetchBaseQuery({baseUrl: base_url}),
+    endpoints: builder => ({
+        getWeatherByCity: builder.query({
+            query: city => `?q=${city}&appid=${api_key}&units=metric`
+        })
+    })
+})
+
+
+export const {useGetWeatherByCityQuery} = weatherApi
+
+/*
 export const fetchWeather = createAsyncThunk(
     'fetch/weather',
     async (city: string) => {
@@ -18,3 +33,5 @@ export const fetchWeather = createAsyncThunk(
         }
     }
 )
+
+ */
