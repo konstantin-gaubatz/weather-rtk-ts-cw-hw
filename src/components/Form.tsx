@@ -1,5 +1,4 @@
 import {useAppDispatch} from "../app/hooks.ts";
-//import {fetchWeather} from "../features/api/weatherAction.ts";
 import type {FormEvent} from "react";
 import {setCity} from "../features/city/citySlice.ts";
 

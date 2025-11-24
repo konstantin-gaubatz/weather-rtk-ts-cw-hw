@@ -1,7 +1,5 @@
 import {configureStore} from "@reduxjs/toolkit";
 import city from "../features/city/citySlice.ts"
-//import weather from "../features/weather/weatherSlice.ts";
-//import message from "../features/message/messageSlice.ts";
 import {weatherApi} from "../features/api/weatherAction.ts";
 
 export const store = configureStore({
