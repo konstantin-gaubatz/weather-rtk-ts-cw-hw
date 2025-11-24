@@ -26,7 +26,7 @@ const Weather = () => {
                 <>
                     <p>Location: {data.location}</p>
                     <p>Temp: {data.temp} °C</p>
-                    <p>Pressure: {data.pressure}</p>
+                    <p>Pressure: {data.pressure} mmHg</p>
                     <p>Sunset: {data.sunset}</p>
                 </>
             }

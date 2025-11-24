@@ -1,6 +1,6 @@
 import {api_key, base_url} from "../../utils/constants.ts";
 import {createApi, fetchBaseQuery} from "@reduxjs/toolkit/query/react";
-import type {WeatherInfo} from "../../utils/types";
+import type {WeatherInfo, WeatherResponse} from "../../utils/types";
 
 
 export const weatherApi = createApi({
@@ -15,7 +15,7 @@ export const weatherApi = createApi({
 
             // Еще одна возможная опция endpoint-а, которая позволяет вернуть измененный объект,
             // их тех данных, что нам отдает сервер по запросу.
-            transformResponse: (response: WeatherInfo) => ({
+            transformResponse: (response: WeatherResponse):WeatherInfo => ({
                 location: `${response.sys.country}, ${response.name}`,
                 temp: Math.round(response.main.temp),
                 pressure: response.main.pressure,

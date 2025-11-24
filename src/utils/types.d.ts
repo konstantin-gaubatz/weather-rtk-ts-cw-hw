@@ -1,4 +1,4 @@
-export interface WeatherInfo {
+export interface WeatherResponse {
     sys: {
         country: string;
         sunset: number;
@@ -8,4 +8,11 @@ export interface WeatherInfo {
         temp: number;
         pressure: number;
     };
+}
+
+export interface WeatherInfo {
+    location: string;
+    temp: number,
+    pressure: number,
+    sunset: string
 }
